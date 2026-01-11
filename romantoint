@@ -1,0 +1,61 @@
+#include<stdio.h>
+int romanToInt(char* s) {
+    long int i=0,digit=0;
+   while(s[i]!='\0'){
+    char c=s[i];
+    if(c=='I'){
+    if(s[i+1]=='V'){
+    digit+=4;
+    i++;
+    }
+    else if(s[i+1]=='X'){
+        digit+=9;
+        i++;
+    }
+    else
+    digit+=1;
+    }
+    else if(c=='V')
+    digit+=5;
+    else if(c=='X'){
+     if(s[i+1]=='C'){
+     digit+=90;
+     i++;
+     }
+     else if(s[i+1]=='L'){
+     digit+=40;
+     i++;
+    }
+    else
+    digit+=10;
+    }
+    else if(c=='L')
+    digit+=50;
+    else if(c=='C'){
+    if (s[i+1]=='M'){
+    digit+=900;
+    i++;
+    }
+    else if(s[i+1]=='D'){
+        digit+=400;
+        i++;
+    }
+    else
+    digit+=100;
+    }
+    else if(c=='D')
+    digit+=500;
+    else if(c=='M') 
+    digit+=1000;
+    else digit+=0;
+    i++;
+   }
+   return digit; 
+}
+int main(){
+    char s[20];
+    scanf("%s",s);
+    int result=romanToInt(s);
+    printf("%d",result);
+    return 0;
+}
