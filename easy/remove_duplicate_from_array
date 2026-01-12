@@ -31,4 +31,5 @@ int main() {
     }
     printf("\nNew size: %d\n", newSize);
     return 0;
+
 }
