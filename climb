@@ -1,0 +1,19 @@
+#include<stdio.h>
+int climbStairs(int n) {
+    if(n<=2)
+    return n;
+    int a=1;
+    int b=2;
+    for(int i=2;i<n;i++){
+        int next=a+b;
+        a=b;
+        b=next;
+    }
+    return b;
+}
+int main() {
+    int n = 5;
+    int ways = climbStairs(n);
+    printf("Number of ways to climb %d stairs: %d\n", n, ways);
+    return 0;
+}
